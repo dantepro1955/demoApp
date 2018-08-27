@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    defaultConfig {
+        applicationId "com.jukilo.myapplication"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    /* droid.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 26.1.0, 25.3.1. Examples include com.android.support:support-compat:26.1.0 and com.android.support:animated-vector-drawable:25.3.1 less... (Ctrl+F1)
+    There are some combinations of libraries, or tools and libraries, that are incompatible, or can lead to bugs. One such incompatibility is compiling with a version of the Android support libraries that is not the latest version (or in particular, a version lower than your targetSdkVersion).
+    */
+    // implementation 'com.android.support:appcompat-v7:26.1.0'
+    /*
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
+
+    implementation 'org.piwik.sdk:piwik-sdk:3.0.3'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.x.x'
+
+    implementation 'com.android.billingclient:billing:1.1'
+
+    implementation 'com.applovin:applovin-sdk:8.1.0'
+    implementation 'com.google.ads.mediation:applovin:8.1.0.0'
+
+    implementation 'com.cocosw:bottomsheet:1.+@aar'
+
+    implementation 'com.flurry.android:analytics:11.1.1@aar'
+    implementation 'com.flurry.android:ads:11.1.1@aar'
+    // Check the verssion of firebase 16.0.3 = 26.1.0
+    // current version for appcompat-v7:25.3.1 : firebase-core:11.8.0
+    //implementation 'com.google.firebase:firebase-core:11.8.0'
+    // implementation 'com.google.gms:google-services:4.1.0'
+    //implementation 'com.google.android.gms:play-services:10.8.0'
+    // conflict with 5.0.0 use 4.2.0 instead
+    implementation 'com.karumi:dexter:4.2.0'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    implementation 'com.mopub:mopub-sdk:5.3.0@aar'
+
+    implementation 'com.nuance:speechkit:2.1+@aar'
+    // conflict
+    // implementation 'com.onesignal:OneSignal:3.6.5'
+
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+
+    // implementation 'com.taplytics.sdk:taplytics:+@aar'
+    //socket.io connections only made on debug devices.
+    //To make live changes on a release build, remove the `debugcompile` flag
+    implementation 'io.socket:socket.io-client:+'
+    implementation 'com.google.android.gms:play-services-gcm:9.+'
+
+    //Volley
+    //implementation 'com.android.volley:volley:+'
+    */
+    implementation 'com.facebook.fresco:fresco:1.10.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+// apply plugin: 'com.google.gms.google-services'
